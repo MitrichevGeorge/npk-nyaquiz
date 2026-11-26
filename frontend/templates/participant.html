@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="participant-root" data-join-code="{{ join_code }}">
+  <section id="join-box" class="card">
+    <h2>Вход в квиз {{ join_code }}</h2>
+    <form id="participant-join-form">
+      <div class="field">
+        <label for="nickname-input">Никнейм (анонимно)</label>
+        <input id="nickname-input" type="text" maxlength="64" required>
+      </div>
+      <button class="btn" type="submit">Войти</button>
+    </form>
+  </section>
+
+  <section id="play-box" class="card" hidden>
+    <div style="margin-bottom:12px;">
+      <span id="participant-timer" class="timer-badge" aria-live="polite"></span>
+    </div>
+    <div id="participant-stage" aria-live="polite"></div>
+  </section>
+
+  <p id="participant-status" class="status-msg" aria-live="polite"></p>
+</div>
+{% endblock %}

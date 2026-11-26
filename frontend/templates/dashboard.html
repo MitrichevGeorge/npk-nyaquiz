@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid-2">
+  <section class="card">
+    <h2>Новый квиз</h2>
+    <form id="quiz-form">
+      <div class="field">
+        <label for="quiz-title">Название</label>
+        <input id="quiz-title" type="text" required>
+      </div>
+      <div class="field">
+        <label for="q-prompt">Вопрос (Markdown + LaTeX $...$ / $$...$$)</label>
+        <textarea id="q-prompt" rows="4" required></textarea>
+      </div>
+      <div class="field">
+        <label for="formula-photo-input">Из фото (image-to-LaTeX)</label>
+        <input id="formula-photo-input" type="file" accept="image/*">
+      </div>
+      <div class="card" id="latex-preview" aria-live="polite"></div>
+      <div class="field">
+        <label for="opt-a">Вариант A</label>
+        <input id="opt-a" type="text" required>
+      </div>
+      <div class="field">
+        <label for="opt-b">Вариант B</label>
+        <input id="opt-b" type="text" required>
+      </div>
+      <div class="field">
+        <label for="opt-correct">Правильный вариант</label>
+        <select id="opt-correct">
+          <option value="a">A</option>
+          <option value="b">B</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="q-explanation">Пояснение</label>
+        <textarea id="q-explanation" rows="2"></textarea>
+      </div>
+      <div class="field">
+        <label for="q-duration">Время (сек)</label>
+        <input id="q-duration" type="number" value="30" min="5" max="600">
+      </div>
+      <button class="btn" type="submit">Сохранить квиз</button>
+    </form>
+    <p id="dashboard-status" class="status-msg" aria-live="polite"></p>
+  </section>
+
+  <section>
+    <h2>Мои квизы</h2>
+    <div id="quiz-list"></div>
+  </section>
+</div>
+{% endblock %}

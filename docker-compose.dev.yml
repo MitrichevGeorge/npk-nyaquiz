@@ -1,0 +1,18 @@
+services:
+  nginx:
+    ports:
+      - "127.0.0.1:8080:80"
+
+  backend:
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./shared:/app/shared
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+      - uploads_data:/app/uploads
+
+  admin:
+    command: uvicorn admin.main:app --host 0.0.0.0 --port 8001 --reload
+    volumes:
+      - ./shared:/app/shared
+      - ./admin:/app/admin

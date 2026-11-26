@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid-2">
+  <section class="card">
+    <h2>Вход</h2>
+    <form id="login-form">
+      <div class="field">
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" required>
+      </div>
+      <div class="field">
+        <label for="login-password">Пароль</label>
+        <input id="login-password" type="password" required>
+      </div>
+      <div class="field">
+        <label for="login-totp">Код 2FA (если включён)</label>
+        <input id="login-totp" type="text" maxlength="16">
+      </div>
+      <button class="btn" type="submit">Войти</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Регистрация</h2>
+    <form id="register-form">
+      <div class="field">
+        <label for="reg-name">Имя</label>
+        <input id="reg-name" type="text" required>
+      </div>
+      <div class="field">
+        <label for="reg-email">Email</label>
+        <input id="reg-email" type="email" required>
+      </div>
+      <div class="field">
+        <label for="reg-password">Пароль (от 10 символов)</label>
+        <input id="reg-password" type="password" minlength="10" required>
+      </div>
+      <label><input id="consent-privacy" type="checkbox" required> Согласие на обработку ПДн (<a href="/legal/privacy">политика</a>)</label><br>
+      <label><input id="consent-terms" type="checkbox" required> <a href="/legal/terms">Пользовательское соглашение</a></label><br>
+      <label><input id="consent-disclaimer" type="checkbox" required> <a href="/legal/disclaimer">Отказ от ответственности</a></label><br><br>
+      <button class="btn" type="submit">Создать аккаунт</button>
+    </form>
+  </section>
+</div>
+<p id="auth-status" class="status-msg" aria-live="polite"></p>
+{% endblock %}

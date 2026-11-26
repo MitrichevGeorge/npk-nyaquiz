@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="broadcast-root" class="broadcast-stage" data-run-id="{{ run_id }}" data-token="{{ broadcast_token }}">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <span id="broadcast-timer" class="timer-badge" aria-live="polite"></span>
+    <div id="reaction-layer"></div>
+  </div>
+  <div id="broadcast-stage" class="card" aria-live="polite"></div>
+</div>
+{% endblock %}

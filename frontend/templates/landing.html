@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>nyaquiz — живые квизы с LaTeX и защитой данных</h1>
+  <p class="status-msg">Анонимное участие без регистрации, SSE в реальном времени и распознавание формул по фото.</p>
+  <form id="quick-join-form" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+    <input id="join-code-input" type="text" placeholder="Код квиза" maxlength="12" required>
+    <button class="btn" type="submit">Присоединиться</button>
+  </form>
+</section>
+{% endblock %}

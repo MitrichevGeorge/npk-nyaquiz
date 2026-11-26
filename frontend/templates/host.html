@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="host-root" data-run-id="{{ run_id }}">
+  <section class="card">
+    <h2>Пульт ведущего</h2>
+    <p>Код входа: <strong id="host-code"></strong></p>
+    <p id="host-stage" aria-live="polite"></p>
+    <p id="host-counts" class="status-msg"></p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+      <button id="btn-next" class="btn" type="button">Следующий шаг</button>
+      <button id="btn-finish" class="btn btn-danger" type="button">Завершить</button>
+      <a id="broadcast-link" class="btn btn-secondary" target="_blank" rel="noopener">Открыть трансляцию</a>
+      <a class="btn btn-secondary" href="/api/runs/{{ run_id }}/qr.svg" target="_blank" rel="noopener">QR (SVG)</a>
+      <a class="btn btn-secondary" href="/api/runs/{{ run_id }}/handout.pdf" target="_blank" rel="noopener">Раздатка (PDF)</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>Таблица лидеров</h3>
+    <table class="table">
+      <thead><tr><th>Место</th><th>Участник</th><th>Баллы</th></tr></thead>
+      <tbody id="host-leaderboard"></tbody>
+    </table>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{
+  "name": "nyaquiz-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "animejs": "^4.0.0",
+    "dompurify": "^3.2.2",
+    "katex": "^0.16.11",
+    "marked": "^15.0.0",
+    "mermaid": "^11.4.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2"
+  }
+}
